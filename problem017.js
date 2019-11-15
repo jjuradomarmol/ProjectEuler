@@ -58,29 +58,29 @@ function countingLetters(theNumber) {
   //cents
   else if (theNumberLength == 3) {
     index = onesNumbers.indexOf(theNumberArray[0]);
-    theWordsString = theWordsString + onesWords[index] + 'hundred';
+    theWordsString += onesWords[index] + 'hundred';
     theWordsStringLength = theWordsString.length;
     //second cifer
     if (Number(theNumberArray[1]) > 1) {
       index = onesNumbers.indexOf(theNumberArray[1]);
-      theWordsString = theWordsString + 'and' + tensWords[index - 1];
+      theWordsString += 'and' + tensWords[index - 1];
       theWordsStringLength = theWordsString.length;
       if (Number(theNumberArray[2]) > 0) {
         index = onesNumbers.indexOf(theNumberArray[2]);
-        theWordsString = theWordsString + onesWords[index];
+        theWordsString += onesWords[index];
         theWordsStringLength = theWordsString.length;
       }
     }
     //10 to 19
     else if (Number(theNumberArray[1]) == 1) {
       index = onesNumbers.indexOf(theNumberArray[2]);
-      theWordsString = theWordsString + 'and' + teensWords[index + 1];
+      theWordsString += 'and' + teensWords[index + 1];
       theWordsStringLength = theWordsString.length;
     }
     //ones
     else if (Number(theNumberArray[1]) == 0 && Number(theNumberArray[2]) > 0) {
       index = onesNumbers.indexOf(theNumberArray[2]);
-      theWordsString = theWordsString + 'and' + onesWords[index];
+      theWordsString += 'and' + onesWords[index];
       theWordsStringLength = theWordsString.length;
     }
   }
@@ -88,28 +88,28 @@ function countingLetters(theNumber) {
   //tens
   else if (theNumberLength == 2 && Number(theNumberArray[0]) > 1) {
     index = onesNumbers.indexOf(theNumberArray[0]);
-    theWordsString = theWordsString + tensWords[index - 1];
+    theWordsString += tensWords[index - 1];
     theWordsStringLength = theWordsString.length;
     if (Number(theNumberArray[1]) > 0) {
       index = onesNumbers.indexOf(theNumberArray[1]);
-      theWordsString = theWordsString + onesWords[index];
+      theWordsString += onesWords[index];
       theWordsStringLength = theWordsString.length;
     }
   }
   //10 to 19
   else if (theNumberLength == 2 && Number(theNumberArray[0]) == 1) {
     index = onesNumbers.indexOf(theNumberArray[1]);
-    theWordsString = theWordsString + teensWords[index + 1];
+    theWordsString += teensWords[index + 1];
     theWordsStringLength = theWordsString.length;
   }
 
   //ones
   else if (theNumberLength == 1 && Number(theNumberArray[0]) > 0) {
     index = onesNumbers.indexOf(theNumberArray[0]);
-    theWordsString = theWordsString + onesWords[index];
+    theWordsString += onesWords[index];
     theWordsStringLength = theWordsString.length;
   } else if (theNumberLength == 1 && Number(theNumberArray[0]) == 0) {
-    theWordsString = theWordsString + 'zero';
+    theWordsString += 'zero';
     theWordsStringLength = theWordsString.length;
   }
 }
@@ -119,8 +119,8 @@ function sumLetters(i, j) {
   for (i; i <= j; i++) {
     countingLetters(i);
     sumLettersTotal += theWordsStringLength;
-    console.log(theWordsString);
   }
+  console.log(sumLettersTotal);
 }
 
 sumLetters(1, 1000);
