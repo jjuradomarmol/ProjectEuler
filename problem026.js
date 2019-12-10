@@ -44,7 +44,7 @@ function getCycleSize(num) {
       return 0;
     }
 
-    //Check if the numerator is previously repeated and finish the function if it happen
+    //Check if the numerator is previously repeated
     for (var i = 0; i < numerators.length; i++) {
       if (numerator == numerators[i]) {
         var digitsInSequence = 0;
@@ -57,7 +57,7 @@ function getCycleSize(num) {
       }
     }
 
-    //If numerator is not repeated (checked in the previous part of the function), update the numerators and digits
+    //Update the numerators and digits
     numerators[numerators.length] = numerator;
     var digits = 1;
     while (num > numerator) {
