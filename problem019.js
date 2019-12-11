@@ -21,7 +21,7 @@ function countingSundays() {
 
   function calcSundays() {
     var day = 1;
-    var totalSunday = 0;
+    var totalSundays = 0;
 
     //Year 1900
     for (var month = 0; ++month < 13; ) {
@@ -31,11 +31,11 @@ function countingSundays() {
     //Year 1901...2000
     for (var year = 1900; ++year < 2001; ) {
       for (month = 0; ++month < 13; ) {
-        if (day % 7 == 0) totalSunday++;
+        if (day % 7 == 0) totalSundays++;
         day += month == 2 ? daysInFeb(year) : daysInMonth[month];
       }
     }
-    return totalSunday;
+    return totalSundays;
   }
 
   function daysInFeb(year) {
